@@ -1,6 +1,6 @@
-#Created Wiki Animal Site
+# Created Wiki Animal Site
 
-#App Allows users to
+# App Allows users to
 
 
  - 1. Create new animal wiki
@@ -9,6 +9,6 @@
  - 4. Vote on Animal wiki Articles
 
 
-##I used mongodb for the database of the app
+## I used mongodb for the database of the app
 
 > url: http://doc.gold.ac.uk/usr/182
