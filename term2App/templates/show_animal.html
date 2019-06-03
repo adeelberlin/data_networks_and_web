@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" style="margin-top:100px;">
+
+  <nav aria-label="breadcrumb" class="col-lg-12" style="padding:0;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active"><a href="/animals">Animals</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{animal[0].name}}</li>
+    </ol>
+  </nav>
+
+  <div class="row animals">
+
+        {% for att in animal %}
+        <div class="col-lg-12">
+        <h1>{{ att.name }}</h1>
+        <i>Type: {{att.type}}, Votes: {{vote[0].votes}} </i>
+        <hr />
+
+      </div>
+
+      <div class="col-lg-8 center-block">
+          <img width="100%" src="{{att.image_url}}" >
+          <br/>
+          <br/>
+          <p class="lead">{{att.description}}</p>
+        {% endfor %}
+
+      </div>
+
+    <div class="col-lg-12">
+      {% include "vote_form.html" %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

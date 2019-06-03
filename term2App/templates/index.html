@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" style="margin-top:100px;">
+
+  <div class="row">
+
+    <nav aria-label="breadcrumb" class="col-lg-12" style="padding:0;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page">Home</li>
+        <li class="breadcrumb-item active" >Library</li>
+      </ol>
+    </nav>
+
+    <div class="jumbotron col-lg-12">
+      <h1 class="display-3">Animal Wiki site</h1>
+      <p class="lead">Welcome to the animal wiki site where users can read, edit and add entries</p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/add_animal" role="button">Add Entry</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="row animals">
+      <div class="col-lg-12">
+        <h1>Big Cats</h1>
+        <hr/>
+      </div>
+
+    {% for lion in lions[0:3] %}
+        <div class="col-lg-4">
+          <div class="animal">
+
+            <a href="/animals/{{lion._id}}">
+              <img src="{{lion.image_url}}"  width="100%">
+            </a>
+
+            <div class="content">
+              <h3><a class="title" href="/animals/{{lion._id}}">{{lion.name}}</a></h3>
+              <p>{{lion.description|truncate(90, True) }}</p>
+              <a class="btn btn-info" href="/update_animal/{{lion._id}}"> Update Entry </a>
+            </div>
+
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+
+
+  <div class="row animals">
+      <div class="col-lg-12">
+        <h1>Deers</h1>
+        <hr/>
+      </div>
+
+    {% for deer in deers[0:3] %}
+        <div class="col-lg-4">
+          <div class="animal">
+
+            <a href="/animals/{{deer._id}}">
+              <img src="{{deer.image_url}}"  width="100%">
+            </a>
+
+            <div class="content">
+              <h3><a class="title" href="/animals/{{deer._id}}">{{deer.name}}</a></h3>
+              <p>{{deer.description|truncate(80, True) }}</p>
+              <a class="btn btn-info" href="/update_animal/{{deer._id}}"> Update Entry </a>
+            </div>
+
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+
+  <div class="row animals">
+      <div class="col-lg-12">
+        <h1>Snakes</h1>
+        <hr/>
+      </div>
+
+    {% for deer in snakes[0:3] %}
+        <div class="col-lg-4">
+          <div class="animal">
+
+            <a href="/animals/{{deer._id}}">
+              <img src="{{deer.image_url}}"  width="100%">
+            </a>
+
+            <div class="content">
+              <h3><a class="title" href="/animals/{{deer._id}}">{{deer.name}}</a></h3>
+              <p>{{deer.description|truncate(80, True) }}</p>
+              <a class="btn btn-info" href="/update_animal/{{deer._id}}"> Update Entry </a>
+            </div>
+
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+{% endblock %}

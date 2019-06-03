@@ -1,0 +1,4 @@
+class editTwitForm(FlaskForm):
+    twit = StringField('twit', validators = [validators.DataRequired()])
+    twit_id = HiddenField('twit_id')
+    submit = SubmitField('submit', [validators.DataRequired()])

@@ -1,0 +1,50 @@
+body {
+	padding: 20px;
+}
+
+.feature-cat {
+	text-align: center;
+	float: right;
+	border: 2px solid #ccc;
+	width: 25%;
+	position: relative;
+	display: block;
+	margin-bottom: 20px;
+	clear: right;
+}
+
+.feature-cat h3 {
+	font-size: 16px;
+}
+
+.feature-cat img {
+	width: 100%;
+}
+
+.col-main {
+	padding: 10px;
+	border: 2px solid #ccc;
+	width: 70%;
+	float: left;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.btn {
+	margin: 2px 0;
+	background-color: #666;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: #563d7c;
+}
+
+.feature-cat.message {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: #eee;
+    width: 600px;
+}

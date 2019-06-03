@@ -1,0 +1,9 @@
+from flask import Flask
+from flask import render_template, session, request
+from flask import redirect, url_for, flash
+from flask import send_from_directory
+import os
+from vs_url_for import vs_url_for
+from werkzeug.utils import secure_filename
+
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])

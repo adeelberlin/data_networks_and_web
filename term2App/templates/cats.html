@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" style="margin-top:100px;">
+
+  <div class="row">
+
+    <nav aria-label="breadcrumb" class="col-lg-12" style="padding:0;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active"><a href="/animals">Animals</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cats</li>
+      </ol>
+    </nav>
+
+  </div>
+
+  <div class="row animals">
+      <div class="col-lg-12">
+        <h1>Cats</h1>
+        <hr/>
+      </div>
+
+    {% for animal in cats %}
+        <div class="col-lg-4">
+          <div class="animal">
+
+            <a href="/animals/{{animal._id}}">
+              <img src="{{animal.image_url}}"  width="100%">
+            </a>
+
+            <div class="content">
+              <h3><a class="title" href="/animals/{{animal._id}}">{{animal.name}}</a></h3>
+              <p>{{animal.description|truncate(90, True) }}</p>
+              <a class="btn btn-info" href="/update_animal/{{animal._id}}"> Update Entry </a>
+            </div>
+
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+{% endblock %}
